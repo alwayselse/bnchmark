@@ -1,0 +1,7 @@
+export { default as Header } from './Header.tsx'
+export { default as Hero } from './Hero.tsx'
+export { default as Properties } from './Properties.tsx'
+export { default as Amenities } from './Amenities.tsx'
+export { default as Testimonials } from './Testimonials.tsx'
+export { default as Contact } from './Contact.tsx'
+export { default as Footer } from './Footer.tsx'
