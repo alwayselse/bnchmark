@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import BengaluruLogo from '../assets/Bengaluru_Logo.jpeg'
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,14 +36,23 @@ const Header: React.FC = () => {
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold text-yellow-500 hover:text-yellow-600 transition-colors"
+              className="flex items-center space-x-3 group"
             >
-              bnchmark
+              {/* Brand Name */}
+              <span className="text-2xl font-bold text-yellow-500 group-hover:text-yellow-600 transition-colors">
+                bnchmark
+              </span>
+              {/* Bengaluru Logo */}
+              <img
+                src={BengaluruLogo}
+                alt="Bengaluru Official Logo"
+                className="header-bengaluru-logo-large opacity-90 group-hover:opacity-100 transition-all duration-200 group-hover:scale-105"
+              />
             </button>
           </div>
 

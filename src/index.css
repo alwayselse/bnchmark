@@ -58,6 +58,67 @@ body {
   transform: translateZ(0);
 }
 
+/* Bengaluru Logo optimizations */
+.bengaluru-logo {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  will-change: transform, opacity;
+}
+
+/* Header logo specific styles */
+.header-bengaluru-logo {
+  height: 2.5rem; /* 40px */
+  width: auto;
+  max-width: 2.5rem;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Larger header logo styles */
+.header-bengaluru-logo-large {
+  height: 3.5rem; /* 56px */
+  width: auto;
+  max-width: 4rem; /* 64px */
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Responsive logo sizing for larger logo */
+@media (max-width: 640px) {
+  .header-bengaluru-logo-large {
+    height: 2.5rem; /* 40px on mobile */
+    max-width: 3rem; /* 48px on mobile */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .header-bengaluru-logo-large {
+    height: 3rem; /* 48px on tablet */
+    max-width: 3.5rem; /* 56px on tablet */
+  }
+}
+
+/* Responsive logo sizing */
+@media (max-width: 640px) {
+  .bengaluru-logo {
+    max-width: 120px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .bengaluru-logo {
+    max-width: 160px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .bengaluru-logo {
+    max-width: 200px;
+  }
+}
+
 /* Smooth transitions for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   .hero-carousel-image {
