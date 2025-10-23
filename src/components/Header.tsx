@@ -26,7 +26,6 @@ const Header: React.FC = () => {
     { id: 'hero', label: 'Home' },
     { id: 'properties', label: 'Property' },
     { id: 'amenities', label: 'Amenities' },
-    { id: 'team', label: 'Team' },
     { id: 'contact', label: 'Contact' }
   ]
 
