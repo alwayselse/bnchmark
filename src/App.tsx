@@ -3,12 +3,14 @@ import Header from './components/Header.tsx'
 import Hero from './components/Hero.tsx'
 import Properties from './components/Properties.tsx'
 import Amenities from './components/Amenities.tsx'
-import Team from './components/Team.tsx'
+import OtherProperties from './components/OtherProperties.tsx'
 import Testimonials from './components/Testimonials.tsx'
 import Contact from './components/Contact.tsx'
 import Footer from './components/Footer.tsx'
 import WhatsAppButton from './components/WhatsAppButton.tsx'
 import PropertyPage from './pages/PropertyPage.tsx'
+import AtlantisPage from './pages/AtlantisPage.tsx'
+import CoffeeBoardPage from './pages/CoffeeBoardPage.tsx'
 
 // Home page component
 const HomePage = () => (
@@ -18,7 +20,7 @@ const HomePage = () => (
       <Hero />
       <Properties />
       <Amenities />
-      <Team />
+      <OtherProperties />
       <Testimonials />
       <Contact />
     </main>
@@ -33,6 +35,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/properties/:slug" element={<PropertyPage />} />
+          <Route path="/atlantis" element={<AtlantisPage />} />
+          <Route path="/coffee-board" element={<CoffeeBoardPage />} />
         </Routes>
         {/* WhatsApp button appears on all pages */}
         <WhatsAppButton />

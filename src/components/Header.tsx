@@ -24,10 +24,9 @@ const Header: React.FC = () => {
 
   const navigationItems = [
     { id: 'hero', label: 'Home' },
-    { id: 'properties', label: 'Properties' },
+    { id: 'properties', label: 'Property' },
     { id: 'amenities', label: 'Amenities' },
     { id: 'team', label: 'Team' },
-    { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' }
   ]
 
@@ -45,7 +44,7 @@ const Header: React.FC = () => {
             >
               {/* Brand Name */}
               <span className="text-2xl font-bold text-yellow-500 group-hover:text-yellow-600 transition-colors">
-                bnchmark
+                bnchmarc
               </span>
               {/* Bengaluru Logo */}
               <img

@@ -5,7 +5,7 @@ const WhatsAppButton: React.FC = () => {
   
   // TODO: Replace with actual WhatsApp Business number
   const whatsappNumber = "YOUR_WHATSAPP_NUMBER"
-  const defaultMessage = "Hi, I'm interested in a bnchmark property."
+  const defaultMessage = "Hi, I'm interested in a bnchmarc property."
   
   const handleWhatsAppClick = () => {
     // Format the WhatsApp URL with pre-populated message

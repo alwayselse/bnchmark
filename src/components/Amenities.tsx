@@ -13,73 +13,73 @@ const Amenities: React.FC = () => {
     // Mandatory Amenities
     {
       id: 'food',
-      name: 'Nutritious Meals',
-      description: 'Customizable meal plans with healthy, home-cooked food',
+      name: 'Optional Meals',
+      description: 'Flexible meal plans with nutritious home-cooked food',
       icon: '🍽️',
       category: 'mandatory'
     },
     {
       id: 'water-electricity',
-      name: '24/7 Water & Electricity',
-      description: 'Uninterrupted power supply and clean water access',
+      name: '24/7 Water & Power',
+      description: 'Uninterrupted utilities with backup systems',
       icon: '⚡',
       category: 'mandatory'
     },
     {
       id: 'wifi',
       name: 'High-Speed Wi-Fi',
-      description: 'Reliable internet connectivity for work and entertainment',
+      description: 'Reliable internet connectivity throughout',
       icon: '📶',
       category: 'mandatory'
     },
     {
       id: 'laundry',
-      name: 'Laundry Services',
-      description: 'Professional washing and ironing services',
+      name: 'Washing Machines',
+      description: 'Self-service laundry facilities available',
       icon: '👕',
       category: 'mandatory'
     },
     {
       id: 'ac',
       name: 'Air Conditioning',
-      description: 'Climate-controlled rooms for year-round comfort',
+      description: 'AC equipped rooms for comfort',
       icon: '❄️',
       category: 'mandatory'
     },
     {
       id: 'housekeeping',
-      name: 'Regular Housekeeping',
-      description: 'Daily cleaning and maintenance services',
+      name: 'Housekeeping',
+      description: 'Regular cleaning and maintenance',
       icon: '🧹',
       category: 'mandatory'
     },
     {
       id: 'security',
-      name: '24/7 Security',
-      description: 'Round-the-clock security with CCTV monitoring',
+      name: 'CCTV & Biometric',
+      description: 'Advanced security monitoring system',
       icon: '🛡️',
       category: 'mandatory'
     },
     {
-      id: 'maintenance',
-      name: 'Maintenance Support',
-      description: 'Quick response to any maintenance requests',
-      icon: '🔧',
+      id: 'furniture',
+      name: 'Fully Furnished',
+      description: 'Beds, study tables, and wardrobes provided',
+      icon: '�️',
       category: 'mandatory'
     },
     // Luxury Amenities
     {
-      id: 'gym',
-      name: 'Gym/Fitness Center',
-      description: 'Fully equipped fitness center with modern equipment',
-      icon: '🏋️',
+      id: 'kitchen',
+      name: 'Self-Cooking Counter',
+      description: 'Dedicated space for cooking your own meals',
+      icon: '👨‍�',
       category: 'luxury'
     },
     {
-      id: 'recreation',
-      name: 'Recreation Room',
-      description: 'Gaming consoles, pool table, and entertainment area',
-      icon: '🎮',
+      id: 'study',
+      name: 'Study Areas',
+      description: 'Quiet spaces with study tables for focused work',
+      icon: '📚',
       category: 'luxury'
     }
   ]
@@ -100,20 +100,40 @@ const Amenities: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-grey-900 mb-4">
-            World-Class Amenities
+          <h2 className="text-4xl font-bold text-grey-900 mb-6">
+            89 Xquisit - Premium Living Redefined
           </h2>
-          <p className="text-xl text-grey-600 max-w-3xl mx-auto">
-            Every bnchmark property comes with essential amenities to make your stay comfortable and convenient.
-          </p>
+          
+          {/* Updated Description */}
+          <div className="max-w-5xl mx-auto bg-yellow-50 border-2 border-yellow-200 rounded-xl p-8 mb-12">
+            <p className="text-lg text-grey-800 leading-relaxed">
+              <span className="font-bold text-yellow-600">89 Xquisit</span> offers premium PG, hostel, and coliving spaces near{' '}
+              <span className="font-semibold">M S Ramaiah College, MSRIT, IISc, RUAS</span>, and major offices like{' '}
+              <span className="font-semibold">Amazon, Deloitte, World Trade Center, BEL, ISRO</span>, and{' '}
+              <span className="font-semibold">CPRI</span>.
+            </p>
+            <p className="text-lg text-grey-800 leading-relaxed mt-4">
+              Ideal for <span className="font-semibold">students, doctors,</span> and <span className="font-semibold">professionals</span>, 
+              our fully furnished rooms include <span className="font-semibold">beds, AC, Wi-Fi, study tables, washing machines</span>, and{' '}
+              <span className="font-semibold">housekeeping</span>.
+            </p>
+            <p className="text-lg text-grey-800 leading-relaxed mt-4">
+              Enjoy optional food, a <span className="font-semibold">self-cooking counter, CCTV</span>, and{' '}
+              <span className="font-semibold">biometric security</span>. Located near{' '}
+              <span className="font-semibold">New BEL Road, Mathikere, Hebbal</span>, and{' '}
+              <span className="font-semibold">Sanjaynagar</span>, 89 Xquisit combines{' '}
+              <span className="font-semibold text-yellow-600">comfort, safety</span>, and{' '}
+              <span className="font-semibold text-yellow-600">style</span> for boys and girls PGs in Bangalore.
+            </p>
+          </div>
         </div>
 
         {/* Mandatory Amenities */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-grey-900 mb-8 text-center">
-            Essential Amenities
+            Premium Amenities at 89 Xquisit
             <span className="block text-sm font-normal text-grey-600 mt-1">
-              Available at all bnchmark properties
+              Everything you need for comfortable living
             </span>
           </h3>
           
@@ -127,9 +147,9 @@ const Amenities: React.FC = () => {
         {/* Luxury Amenities */}
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-grey-900 mb-8 text-center">
-            Premium Amenities
+            Additional Facilities
             <span className="block text-sm font-normal text-grey-600 mt-1">
-              Available at select luxury properties
+              Making your stay even more convenient
             </span>
           </h3>
           
@@ -143,7 +163,7 @@ const Amenities: React.FC = () => {
         {/* Features Highlight */}
         <div className="bg-grey-50 border border-grey-200 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-grey-900 mb-4">
-            Why Choose bnchmark?
+            Why Choose bnchmarc?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div className="flex flex-col items-center">

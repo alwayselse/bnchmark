@@ -75,7 +75,7 @@ const PropertyPage: React.FC = () => {
               <ArrowLeft className="w-5 h-5 mr-2" />
               <span className="font-semibold">Back to Home</span>
             </Link>
-            <div className="text-2xl font-bold text-yellow-600">bnchmark</div>
+            <div className="text-2xl font-bold text-yellow-600">bnchmarc</div>
           </div>
         </div>
       </nav>
@@ -202,9 +202,9 @@ const PropertyPage: React.FC = () => {
                     <Phone className="w-5 h-5 mr-3 text-yellow-600" />
                     +91 98765 43210
                   </a>
-                  <a href="mailto:bookings@bnchmark.com" className="flex items-center text-grey-700 hover:text-yellow-600 transition-colors">
+                  <a href="mailto:bookings@bnchmarc.com" className="flex items-center text-grey-700 hover:text-yellow-600 transition-colors">
                     <Mail className="w-5 h-5 mr-3 text-yellow-600" />
-                    bookings@bnchmark.com
+                    bookings@bnchmarc.com
                   </a>
                 </div>
                 <button className="w-full bg-yellow-500 text-grey-900 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">

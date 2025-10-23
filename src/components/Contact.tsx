@@ -95,25 +95,25 @@ const Contact: React.FC = () => {
 
   const locations = [
     {
-      name: 'bnchmark Luxury Living',
-      type: 'Girls PG',
-      address: 'Koramangala, Bengaluru',
-      phone: '+91 98765 43210',
-      email: 'luxury@bnchmark.com'
+      name: '89 Xquisit',
+      type: 'Premium Co-living Space',
+      address: '89 Xquisit, New BEL Road, Mathikere, Bengaluru, Karnataka 560054',
+      phone: '+91 7411057111',
+      email: 'booking@bnchmarc.com'
     },
     {
-      name: 'bnchmark Executive Suites',
-      type: 'Boys PG',
-      address: 'Koramangala, Bengaluru',
-      phone: '+91 98765 43211',
-      email: 'executive@bnchmark.com'
-    },
-    {
-      name: 'bnchmark Community House',
+      name: 'Atlantis Co-Living Space',
       type: 'Co-living',
-      address: 'Koramangala, Bengaluru',
-      phone: '+91 98765 43212',
-      email: 'community@bnchmark.com'
+      address: 'Nagavara, Bengaluru (Near Manyata Tech Park)',
+      phone: '+91 7411057111',
+      email: 'booking@bnchmarc.com'
+    },
+    {
+      name: '220 Coffee Board',
+      type: 'Single BHK Apartment',
+      address: '220 Coffee Board Layout, Bengaluru',
+      phone: '++91 7411057111',
+      email: 'booking@bnchmarc.com'
     }
   ]
 
@@ -301,8 +301,8 @@ const Contact: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <p className="text-grey-600 font-medium">Koramangala, Bengaluru</p>
-                <p className="text-sm text-grey-500">Interactive map coming soon</p>
+                <p className="text-grey-600 font-medium">3 Locations Across Bengaluru</p>
+                <p className="text-sm text-grey-500">Visit individual property pages for detailed maps</p>
               </div>
             </div>
           </div>

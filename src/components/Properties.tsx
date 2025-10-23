@@ -1,127 +1,284 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { properties } from '../data/properties'
-import { ArrowRight, MapPin, Users } from 'lucide-react'
+import React, { useState } from 'react'
+import { MapPin, Users, Check } from 'lucide-react'
+
+// Import 89 Xquisit property images (different from hero)
+import bathroom from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2851 [BATHROOM].jpg'
+import passage1 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2856 [PASSAGE].jpg'
+import passage2 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2889 [PASSAGE].jpg'
+import doubleRoom3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2879 [DOUBLE SHARING ROOM].jpg'
+import tripleRoom3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2846 [TRIPLE SHARING ROOM].jpg'
+import dining3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2973 [DINING].jpg'
+import lobby3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2932 [LOBBY].jpg'
+import terrace2 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2914 [TERRACE].jpg'
 
 const Properties: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const propertyImages = [
+    { url: doubleRoom3, alt: 'Double Sharing Room' },
+    { url: tripleRoom3, alt: 'Triple Sharing Room' },
+    { url: lobby3, alt: 'Lobby Area' },
+    { url: dining3, alt: 'Dining Hall' },
+    { url: terrace2, alt: 'Terrace View' },
+    { url: passage1, alt: 'Passage Corridor' },
+    { url: bathroom, alt: 'Modern Bathroom' },
+    { url: passage2, alt: 'Library Passage' }
+  ]
+
+  const keyFeatures = [
+    'Fully Furnished Rooms',
+    'AC & Wi-Fi',
+    'Study Tables & Beds',
+    'Washing Machines',
+    'Housekeeping',
+    'Optional Food Service',
+    'Self-Cooking Counter',
+    'CCTV Security',
+    'Biometric Access',
+    '24/7 Power Backup'
+  ]
+
+  const handleWhatsApp = () => {
+    const whatsappNumber = "YOUR_WHATSAPP_NUMBER"
+    const message = "Hi, I'm interested in 89 Xquisit property. Can you provide more details?"
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section id="properties" className="py-20 bg-grey-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-grey-900 mb-4">
-            Our Properties
+            89 Xquisit - Premium Co-living Space
           </h2>
           <p className="text-xl text-grey-600 max-w-3xl mx-auto">
-            Discover our carefully curated living spaces, each designed to meet different lifestyle needs and preferences.
+            Experience luxury living near Bengaluru's top educational institutions and corporate offices
           </p>
         </div>
 
-        {/* Properties Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {properties.map((property) => (
-            <div
-              key={property.id}
-              className="bg-white rounded-xl shadow-lg border border-grey-200 overflow-hidden hover:shadow-xl hover:border-yellow-300 transition-all duration-300 group"
-            >
-              {/* Property Image */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={property.heroImage}
-                  alt={property.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-yellow-500 text-grey-900 px-3 py-1 rounded-full text-sm font-medium">
-                    {property.type}
-                  </span>
-                </div>
-                <div className="absolute bottom-4 right-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-grey-900 px-3 py-1 rounded-full text-sm font-semibold">
-                    {property.price}
-                  </span>
-                </div>
-              </div>
-
-              {/* Property Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-grey-900 mb-2">
-                  {property.name}
-                </h3>
-                
-                <p className="text-grey-600 mb-4 leading-relaxed">
-                  {property.tagline}
-                </p>
-
-                {/* Location */}
-                <div className="flex items-center text-grey-600 mb-4">
-                  <MapPin className="w-4 h-4 mr-2 text-yellow-500" />
-                  <span className="text-sm">{property.location.address.split(',')[0]}</span>
-                </div>
-
-                {/* Room Types */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-grey-800 mb-3">Available Rooms:</h4>
-                  <div className="space-y-2">
-                    {property.rooms.slice(0, 3).map((room, idx) => (
-                      <div key={idx} className="flex items-center justify-between text-sm">
-                        <span className="text-grey-600 flex items-center">
-                          <Users className="w-3 h-3 mr-1" />
-                          {room.type}
-                        </span>
-                        <span className="font-semibold text-yellow-600">{room.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Key Amenities Preview */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-grey-800 mb-3">Key Amenities:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {property.amenities.slice(0, 6).map((amenity, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-grey-600">
-                        <svg className="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {amenity.name}
-                      </div>
-                    ))}
-                  </div>
-                  {property.amenities.length > 6 && (
-                    <p className="text-xs text-grey-500 mt-2">
-                      +{property.amenities.length - 6} more amenities
-                    </p>
-                  )}
-                </div>
-
-                {/* CTA Button */}
-                <Link 
-                  to={`/properties/${property.slug}`}
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-grey-900 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center group"
-                >
-                  View Full Details
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+        {/* Main Property Display */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {/* Left: Image Gallery */}
+          <div className="space-y-4">
+            {/* Main Image */}
+            <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
+              <img
+                src={propertyImages[currentImageIndex].url}
+                alt={propertyImages[currentImageIndex].alt}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                <span className="text-sm font-medium text-grey-900">
+                  {propertyImages[currentImageIndex].alt}
+                </span>
               </div>
             </div>
-          ))}
+
+            {/* Thumbnail Grid */}
+            <div className="grid grid-cols-4 gap-3">
+              {propertyImages.slice(0, 8).map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`relative h-20 rounded-lg overflow-hidden transition-all duration-200 ${
+                    currentImageIndex === index
+                      ? 'ring-2 ring-yellow-500 scale-105'
+                      : 'hover:scale-105 opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Location Map */}
+          <div className="space-y-6">
+            {/* Map Container */}
+            <div className="bg-white rounded-xl shadow-lg p-6 h-96">
+              <h3 className="text-xl font-bold text-grey-900 mb-4 flex items-center">
+                <MapPin className="w-5 h-5 mr-2 text-yellow-500" />
+                Prime Location
+              </h3>
+              
+              {/* Embedded Google Map */}
+              <div className="w-full h-72 rounded-lg overflow-hidden border border-grey-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9896!2d77.5677!3d13.0358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzA5LjAiTiA3N8KwMzQnMDMuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="89 Xquisit Location Map"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Address Card */}
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+              <h4 className="font-bold text-grey-900 mb-2">Address</h4>
+              <p className="text-grey-700 mb-4">
+                89 Xquisit, New BEL Road, Mathikere<br />
+                Bengaluru, Karnataka 560054
+              </p>
+              
+              <div className="space-y-2">
+                <h4 className="font-bold text-grey-900 mb-2">Nearby Landmarks</h4>
+                <div className="grid grid-cols-2 gap-2 text-sm text-grey-700">
+                  <div>• M S Ramaiah College</div>
+                  <div>• MSRIT</div>
+                  <div>• IISc Bangalore</div>
+                  <div>• RUAS</div>
+                  <div>• Amazon Office</div>
+                  <div>• Deloitte</div>
+                  <div>• BEL</div>
+                  <div>• ISRO</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-grey-600 mb-6">
-            Ready to find your perfect living space?
-          </p>
-          <button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center px-8 py-3 bg-yellow-500 hover:bg-yellow-600 text-grey-900 font-semibold rounded-lg transition-colors duration-200"
-          >
-            Get in Touch
-            <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-          </button>
+        {/* Room Types & Pricing */}
+        <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+          <h3 className="text-2xl font-bold text-grey-900 mb-8 text-center">
+            Available Accommodations
+          </h3>
+          
+          {/* Women's Section */}
+          <div className="mb-10">
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-pink-100 px-6 py-2 rounded-full">
+                <h4 className="text-xl font-bold text-pink-700">WOMEN</h4>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="border-2 border-pink-200 rounded-lg p-6 hover:border-pink-400 hover:shadow-md transition-all duration-200 bg-pink-50/30">
+                <div className="flex items-center mb-3">
+                  <Users className="w-5 h-5 text-pink-500 mr-2" />
+                  <h5 className="font-bold text-grey-900">Triple Sharing</h5>
+                </div>
+                <p className="text-sm text-grey-600 mb-2">Shared Room Triple Occupancy</p>
+                <p className="text-3xl font-bold text-pink-600 mb-2">₹10,000</p>
+                <p className="text-sm text-grey-600 mb-4">starts @ per month</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+                  Available
+                </span>
+              </div>
+
+              <div className="border-2 border-pink-200 rounded-lg p-6 hover:border-pink-400 hover:shadow-md transition-all duration-200 bg-pink-50/30">
+                <div className="flex items-center mb-3">
+                  <Users className="w-5 h-5 text-pink-500 mr-2" />
+                  <h5 className="font-bold text-grey-900">Double Sharing</h5>
+                </div>
+                <p className="text-sm text-grey-600 mb-2">Shared Room Double Occupancy</p>
+                <p className="text-3xl font-bold text-pink-600 mb-2">₹12,000</p>
+                <p className="text-sm text-grey-600 mb-4">starts @ per month</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+                  Available
+                </span>
+              </div>
+
+              <div className="border-2 border-pink-200 rounded-lg p-6 hover:border-pink-400 hover:shadow-md transition-all duration-200 bg-pink-50/30">
+                <div className="flex items-center mb-3">
+                  <Users className="w-5 h-5 text-pink-500 mr-2" />
+                  <h5 className="font-bold text-grey-900">Single Occupancy</h5>
+                </div>
+                <p className="text-sm text-grey-600 mb-2">Full Room Single Occupancy</p>
+                <p className="text-3xl font-bold text-pink-600 mb-2">₹24,000</p>
+                <p className="text-sm text-grey-600 mb-4">starts @ per month</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+                  Available
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Men's Section */}
+          <div className="mb-8">
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-blue-100 px-6 py-2 rounded-full">
+                <h4 className="text-xl font-bold text-blue-700">MEN</h4>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 hover:shadow-md transition-all duration-200 bg-blue-50/30">
+                <div className="flex items-center mb-3">
+                  <Users className="w-5 h-5 text-blue-500 mr-2" />
+                  <h5 className="font-bold text-grey-900">Triple Sharing</h5>
+                </div>
+                <p className="text-sm text-grey-600 mb-2">Shared Room Triple Occupancy</p>
+                <p className="text-3xl font-bold text-blue-600 mb-2">₹10,000</p>
+                <p className="text-sm text-grey-600 mb-4">starts @ per month</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+                  Available
+                </span>
+              </div>
+
+              <div className="border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 hover:shadow-md transition-all duration-200 bg-blue-50/30">
+                <div className="flex items-center mb-3">
+                  <Users className="w-5 h-5 text-blue-500 mr-2" />
+                  <h5 className="font-bold text-grey-900">Double Sharing</h5>
+                </div>
+                <p className="text-sm text-grey-600 mb-2">Shared Room Double Occupancy</p>
+                <p className="text-3xl font-bold text-blue-600 mb-2">₹12,000</p>
+                <p className="text-sm text-grey-600 mb-4">starts @ per month</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+                  Available
+                </span>
+              </div>
+
+              <div className="border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 hover:shadow-md transition-all duration-200 bg-blue-50/30">
+                <div className="flex items-center mb-3">
+                  <Users className="w-5 h-5 text-blue-500 mr-2" />
+                  <h5 className="font-bold text-grey-900">Single Occupancy</h5>
+                </div>
+                <p className="text-sm text-grey-600 mb-2">Full Room Single Occupancy</p>
+                <p className="text-3xl font-bold text-blue-600 mb-2">₹24,000</p>
+                <p className="text-sm text-grey-600 mb-4">starts @ per month</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+                  Available
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Features Grid */}
+          <div className="border-t border-grey-200 pt-8">
+            <h4 className="font-bold text-grey-900 mb-4 text-center">Key Features & Amenities</h4>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {keyFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center text-sm text-grey-700">
+                  <Check className="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" />
+                  {feature}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-8">
+            <button
+              onClick={handleWhatsApp}
+              className="inline-flex items-center px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-grey-900 font-semibold text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Book a Visit or Inquire Now
+              <svg className="ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
