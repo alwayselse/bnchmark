@@ -101,29 +101,29 @@ const Amenities: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-grey-900 mb-6">
-            89 Xquisit - Premium Living Redefined
+            Premium PG Amenities in Bengaluru - 89 Xquisit
           </h2>
           
           {/* Updated Description */}
           <div className="max-w-5xl mx-auto bg-yellow-50 border-2 border-yellow-200 rounded-xl p-8 mb-12">
             <p className="text-lg text-grey-800 leading-relaxed">
-              <span className="font-bold text-yellow-600">89 Xquisit</span> offers premium PG, hostel, and coliving spaces near{' '}
+              <span className="font-bold text-yellow-600">89 Xquisit</span> offers the best PG, hostel, and co-living spaces in Bengaluru near{' '}
               <span className="font-semibold">M S Ramaiah College, MSRIT, IISc, RUAS</span>, and major offices like{' '}
               <span className="font-semibold">Amazon, Deloitte, World Trade Center, BEL, ISRO</span>, and{' '}
               <span className="font-semibold">CPRI</span>.
             </p>
             <p className="text-lg text-grey-800 leading-relaxed mt-4">
               Ideal for <span className="font-semibold">students, doctors,</span> and <span className="font-semibold">professionals</span>, 
-              our fully furnished rooms include <span className="font-semibold">beds, AC, Wi-Fi, study tables, washing machines</span>, and{' '}
+              our fully furnished PG rooms include <span className="font-semibold">beds, AC, Wi-Fi, study tables, washing machines</span>, and{' '}
               <span className="font-semibold">housekeeping</span>.
             </p>
             <p className="text-lg text-grey-800 leading-relaxed mt-4">
               Enjoy optional food, a <span className="font-semibold">self-cooking counter, CCTV</span>, and{' '}
               <span className="font-semibold">biometric security</span>. Located near{' '}
               <span className="font-semibold">New BEL Road, Mathikere, Hebbal</span>, and{' '}
-              <span className="font-semibold">Sanjaynagar</span>, 89 Xquisit combines{' '}
+              <span className="font-semibold">Sanjaynagar</span>, 89 Xquisit is the best PG and hostel combining{' '}
               <span className="font-semibold text-yellow-600">comfort, safety</span>, and{' '}
-              <span className="font-semibold text-yellow-600">style</span> for boys and girls PGs in Bangalore.
+              <span className="font-semibold text-yellow-600">style</span> for boys and girls in Bangalore.
             </p>
           </div>
         </div>

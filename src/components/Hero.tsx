@@ -19,43 +19,43 @@ const Hero: React.FC = () => {
   const carouselImages = [
     {
       url: tripleRoom1,
-      alt: 'Triple Sharing Room'
+      alt: 'Premium PG Triple Sharing Room in Bengaluru - 89 Xquisit Best Hostel near BEL Road'
     },
     {
       url: doubleRoom1,
-      alt: 'Double Sharing Room'
+      alt: 'Affordable PG Double Sharing Room in Bengaluru - 89 Xquisit Best Hostel near Mathikere'
     },
     {
       url: lobby1,
-      alt: 'Spacious Lobby Area'
+      alt: 'Spacious Lobby Area - Best PG in Bengaluru with Modern Amenities near BEL Road'
     },
     {
       url: dining1,
-      alt: 'Modern Dining Space'
+      alt: 'Modern Dining Space - Best PG Hostel in Bengaluru with Food Facilities near Mathikere'
     },
     {
       url: terrace,
-      alt: 'Rooftop Terrace'
+      alt: 'Rooftop Terrace - Premium Co-living Space in Bengaluru Best PG near MS Ramaiah'
     },
     {
       url: library,
-      alt: 'Library and Study Area'
+      alt: 'Library and Study Area - Best PG for Students in Bengaluru near MSRIT and IISc'
     },
     {
       url: tripleRoom2,
-      alt: 'Comfortable Triple Sharing Room'
+      alt: 'Comfortable Triple Sharing Room - Affordable PG Hostel in Bengaluru near BEL Road'
     },
     {
       url: doubleRoom2,
-      alt: 'Cozy Double Sharing Room'
+      alt: 'Cozy Double Sharing Room - Best PG in Bengaluru with AC and Wi-Fi near Mathikere'
     },
     {
       url: lobby2,
-      alt: 'Welcoming Lobby'
+      alt: 'Welcoming Lobby - Premium PG Hostel in Bengaluru Best Co-living Space near BEL Road'
     },
     {
       url: dining2,
-      alt: 'Contemporary Dining Hall'
+      alt: 'Contemporary Dining Hall - Best PG in Bengaluru with Food and Security near Mathikere'
     }
   ]
 
@@ -107,12 +107,12 @@ const Hero: React.FC = () => {
       {/* Content - Layered on top of carousel */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-          Your next home 
-          <span className="block text-yellow-400 drop-shadow-lg">not just a room</span>
+          Best PG & Hostels in{' '}
+          <span className="block text-yellow-400 drop-shadow-lg">Bengaluru</span>
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 text-grey-100 max-w-2xl mx-auto drop-shadow-md">
-          Experience premium co-living spaces designed for comfort, community, and convenience in the heart of Bengaluru.
+          Your next home, not just a room - Premium co-living spaces near BEL Road, Mathikere & Manyata Tech Park
         </p>
 
         <button

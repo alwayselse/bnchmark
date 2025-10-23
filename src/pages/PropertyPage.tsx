@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getPropertyBySlug } from '../data/properties'
 import { ArrowLeft, MapPin, Star, Send, Phone, Mail } from 'lucide-react'
@@ -26,6 +26,45 @@ const PropertyPage: React.FC = () => {
     roomType: '',
     message: ''
   })
+
+  // Update meta tags for SEO
+  useEffect(() => {
+    if (property) {
+      document.title = `${property.name} - Best PG in ${property.location.address} Bengaluru | bnchmark`
+      
+      // Update meta description
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 
+          `Book ${property.name} PG in ${property.location.address} Bengaluru. ${property.type} accommodation with premium amenities. ${property.tagline}. ${property.price}.`
+        )
+      }
+
+      // Update Open Graph tags
+      const ogTitle = document.querySelector('meta[property="og:title"]')
+      if (ogTitle) {
+        ogTitle.setAttribute('content', `${property.name} - Best PG in ${property.location.address} Bengaluru`)
+      }
+
+      const ogDescription = document.querySelector('meta[property="og:description"]')
+      if (ogDescription) {
+        ogDescription.setAttribute('content', 
+          `${property.type} accommodation in ${property.location.address}. ${property.tagline}. ${property.price}.`
+        )
+      }
+    }
+
+    // Cleanup - restore original meta tags on unmount
+    return () => {
+      document.title = 'bnchmark - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 
+          'Find premium PG, hostels, and co-living spaces in Bengaluru near Mathikere, Nagavara, and BEL Road. Fully furnished rooms with AC, Wi-Fi, food, and security. Book your PG accommodation today!'
+        )
+      }
+    }
+  }, [property])
 
   if (!property) {
     return (

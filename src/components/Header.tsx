@@ -41,6 +41,7 @@ const Header: React.FC = () => {
             <button
               onClick={() => scrollToSection('hero')}
               className="flex items-center space-x-3 group"
+              aria-label="bnchmarc Home - Best PG and Hostels in Bengaluru"
             >
               {/* Brand Name */}
               <span className="text-2xl font-bold text-yellow-500 group-hover:text-yellow-600 transition-colors">
@@ -49,20 +50,21 @@ const Header: React.FC = () => {
               {/* Bengaluru Logo */}
               <img
                 src={BengaluruLogo}
-                alt="Bengaluru Official Logo"
+                alt="Bengaluru Official Logo - Best PG and Hostels in Bengaluru"
                 className="header-bengaluru-logo-large opacity-90 group-hover:opacity-100 transition-all duration-200 group-hover:scale-105"
               />
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden md:block" aria-label="Main navigation">
             <div className="ml-10 flex items-baseline space-x-8">
               {navigationItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className="text-grey-800 hover:text-yellow-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  aria-label={`Navigate to ${item.label}`}
                 >
                   {item.label}
                 </button>
@@ -75,6 +77,7 @@ const Header: React.FC = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="bg-grey-50 p-2 rounded-md text-grey-500 hover:text-grey-700 hover:bg-grey-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow-500"
+              aria-label="Toggle mobile menu"
             >
               <span className="sr-only">Open main menu</span>
               {!isMobileMenuOpen ? (
@@ -93,19 +96,20 @@ const Header: React.FC = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden">
+        <nav className="md:hidden" aria-label="Mobile navigation">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-grey-200">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="text-grey-800 hover:text-yellow-500 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                aria-label={`Navigate to ${item.label}`}
               >
                 {item.label}
               </button>
             ))}
           </div>
-        </div>
+        </nav>
       )}
     </header>
   )

@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MapPin, Check, ArrowLeft, Home } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const CoffeeBoardPage: React.FC = () => {
+  // Update meta tags for SEO
+  useEffect(() => {
+    document.title = '220 Coffee Board - Premium 1BHK Apartment in Bengaluru | bnchmark'
+    
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 
+        'Book 220 Coffee Board - Premium Single BHK apartment in Bengaluru. Fully furnished independent living space at ₹17,000/month. Best 1BHK rental near Coffee Board area.'
+      )
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    if (ogTitle) {
+      ogTitle.setAttribute('content', '220 Coffee Board - Premium 1BHK Apartment in Bengaluru')
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]')
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 
+        'Premium Single BHK apartment in Bengaluru. Fully furnished independent living at ₹17,000/month. Best 1BHK rental property.'
+      )
+    }
+
+    return () => {
+      document.title = 'bnchmark - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 
+          'Find premium PG, hostels, and co-living spaces in Bengaluru near Mathikere, Nagavara, and BEL Road. Fully furnished rooms with AC, Wi-Fi, food, and security. Book your PG accommodation today!'
+        )
+      }
+    }
+  }, [])
+  
   const keyFeatures = [
     'Single BHK Apartment',
     'Fully Furnished',

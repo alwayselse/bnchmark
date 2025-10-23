@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MapPin, Users, Check, ArrowLeft, Wifi, Zap, Sparkles, Car } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const AtlantisPage: React.FC = () => {
+  // Update meta tags for SEO
+  useEffect(() => {
+    document.title = 'Atlantis - Best PG in Nagavara Bengaluru | bnchmark'
+    
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 
+        'Book Atlantis PG in Nagavara Bengaluru near Manyata Tech Park. Affordable co-living space with Wi-Fi, power backup, and parking. Starting from ₹7,000/month. Best hostel for professionals.'
+      )
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Atlantis - Best PG in Nagavara Bengaluru near Manyata')
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]')
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 
+        'Affordable PG accommodation in Nagavara near Manyata Tech Park. Co-living spaces from ₹7,000/month with Wi-Fi, power backup, and parking.'
+      )
+    }
+
+    return () => {
+      document.title = 'bnchmark - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 
+          'Find premium PG, hostels, and co-living spaces in Bengaluru near Mathikere, Nagavara, and BEL Road. Fully furnished rooms with AC, Wi-Fi, food, and security. Book your PG accommodation today!'
+        )
+      }
+    }
+  }, [])
+  
   const keyFeatures = [
     'Complimentary Wi-Fi',
     'Power Backup',

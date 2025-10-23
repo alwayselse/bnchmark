@@ -15,14 +15,14 @@ const Properties: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const propertyImages = [
-    { url: doubleRoom3, alt: 'Double Sharing Room' },
-    { url: tripleRoom3, alt: 'Triple Sharing Room' },
-    { url: lobby3, alt: 'Lobby Area' },
-    { url: dining3, alt: 'Dining Hall' },
-    { url: terrace2, alt: 'Terrace View' },
-    { url: passage1, alt: 'Passage Corridor' },
-    { url: bathroom, alt: 'Modern Bathroom' },
-    { url: passage2, alt: 'Library Passage' }
+    { url: doubleRoom3, alt: '89 Xquisit PG Bengaluru - Double Sharing Room - Best Hostel near BEL Road' },
+    { url: tripleRoom3, alt: '89 Xquisit PG Bengaluru - Triple Sharing Room - Affordable PG near Mathikere' },
+    { url: lobby3, alt: '89 Xquisit PG Bengaluru - Lobby Area - Premium Hostel near MS Ramaiah' },
+    { url: dining3, alt: '89 Xquisit PG Bengaluru - Dining Hall - Best PG with Food near BEL Road' },
+    { url: terrace2, alt: '89 Xquisit PG Bengaluru - Terrace View - Co-living Space near Mathikere' },
+    { url: passage1, alt: '89 Xquisit PG Bengaluru - Passage Corridor - Modern PG Hostel near BEL Road' },
+    { url: bathroom, alt: '89 Xquisit PG Bengaluru - Modern Bathroom - Best Hostel Amenities near Mathikere' },
+    { url: passage2, alt: '89 Xquisit PG Bengaluru - Library Passage - Student PG near MSRIT and IISc' }
   ]
 
   const keyFeatures = [
@@ -52,10 +52,10 @@ const Properties: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-grey-900 mb-4">
-            89 Xquisit - Premium Co-living Space
+            89 Xquisit - Premium PG in Bengaluru
           </h2>
           <p className="text-xl text-grey-600 max-w-3xl mx-auto">
-            Experience luxury living near Bengaluru's top educational institutions and corporate offices
+            Best paying guest accommodation near MS Ramaiah College, MSRIT, IISc, and BEL Road. Fully furnished hostel rooms with AC, Wi-Fi, food, and 24/7 security for boys and girls
           </p>
         </div>
 
