@@ -18,7 +18,6 @@ import {
 } from './utils/structuredData'
 
 // Lazy load property pages for better performance
-const PropertyPage = lazy(() => import('./pages/PropertyPage.tsx'))
 const AtlantisPage = lazy(() => import('./pages/AtlantisPage.tsx'))
 const CoffeeBoardPage = lazy(() => import('./pages/CoffeeBoardPage.tsx'))
 
@@ -86,7 +85,6 @@ function App() {
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/properties/:slug" element={<PropertyPage />} />
             <Route path="/atlantis" element={<AtlantisPage />} />
             <Route path="/coffee-board" element={<CoffeeBoardPage />} />
           </Routes>

@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
     {
       name: '89 Xquisit',
       type: 'Premium Co-living Space',
-      address: '89 Xquisit, New BEL Road, Mathikere, Bengaluru, Karnataka 560054',
+      address: '89 Xquisit, New BEL Road, Mathikere, Bengaluru, Karnataka 560091',
       phone: '+91 7411057111',
       email: 'booking@bnchmarc.com'
     },

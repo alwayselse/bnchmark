@@ -60,9 +60,8 @@ const Hero: React.FC = () => {
   ]
 
   const handleFindYourSpace = () => {
-    // TODO: Replace with actual WhatsApp Business number
-    const whatsappNumber = "YOUR_WHATSAPP_NUMBER"
-    const message = "Hi, I'm interested in finding my space at bnchmarc!"
+    const whatsappNumber = "917411057111"
+    const message = "Hi, I'm interested in finding my space at bnchmark!"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
     
@@ -96,7 +95,11 @@ const Hero: React.FC = () => {
               src={image.url}
               alt={image.alt}
               className="w-full h-full object-cover"
-              loading={index === 0 ? 'eager' : 'lazy'}
+              loading="eager"
+              decoding="async"
+              fetchPriority={index === 0 ? 'high' : 'auto'}
+              width="1920"
+              height="1280"
             />
           </div>
         ))}

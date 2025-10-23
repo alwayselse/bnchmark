@@ -51,7 +51,7 @@ const CoffeeBoardPage: React.FC = () => {
   ]
 
   const handleWhatsApp = () => {
-    const whatsappNumber = "YOUR_WHATSAPP_NUMBER"
+    const whatsappNumber = "917411057111"
     const message = "Hi, I'm interested in 220 Coffee Board - Single BHK. Can you provide more details?"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`

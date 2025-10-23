@@ -51,6 +51,11 @@ const Header: React.FC = () => {
                 src={BengaluruLogo}
                 alt="Bengaluru Official Logo - Best PG and Hostels in Bengaluru"
                 className="header-bengaluru-logo-large opacity-90 group-hover:opacity-100 transition-all duration-200 group-hover:scale-105"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="48"
+                height="48"
               />
             </button>
           </div>

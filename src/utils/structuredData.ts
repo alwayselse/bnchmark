@@ -11,7 +11,7 @@ export const organizationSchema = {
     "streetAddress": "New BEL Road, Mathikere",
     "addressLocality": "Bengaluru",
     "addressRegion": "Karnataka",
-    "postalCode": "560054",
+    "postalCode": "560091",
     "addressCountry": "IN"
   },
   "geo": {
@@ -45,7 +45,7 @@ export const propertySchemas = [
       "streetAddress": "89 Xquisit, New BEL Road, Mathikere",
       "addressLocality": "Bengaluru",
       "addressRegion": "Karnataka",
-      "postalCode": "560054",
+      "postalCode": "560091",
       "addressCountry": "IN"
     },
     "geo": {

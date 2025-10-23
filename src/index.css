@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Image optimization - prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Custom scrolling behavior */
 html {
   scroll-behavior: smooth;
@@ -19,6 +26,27 @@ body {
   font-family: 'Poppins', system-ui, sans-serif;
   line-height: 1.6;
   color: #374151;
+  /* Enable GPU acceleration for smoother scrolling */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize image rendering */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Lazy loaded images transition */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
 }
 
 /* Team carousel scrollbar hiding */

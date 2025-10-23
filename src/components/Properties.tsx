@@ -39,7 +39,7 @@ const Properties: React.FC = () => {
   ]
 
   const handleWhatsApp = () => {
-    const whatsappNumber = "YOUR_WHATSAPP_NUMBER"
+    const whatsappNumber = "917411057111"
     const message = "Hi, I'm interested in 89 Xquisit property. Can you provide more details?"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
@@ -69,6 +69,11 @@ const Properties: React.FC = () => {
                 src={propertyImages[currentImageIndex].url}
                 alt={propertyImages[currentImageIndex].alt}
                 className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="800"
+                height="600"
               />
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                 <span className="text-sm font-medium text-grey-900">
@@ -93,6 +98,10 @@ const Properties: React.FC = () => {
                     src={image.url}
                     alt={image.alt}
                     className="w-full h-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                    width="200"
+                    height="150"
                   />
                 </button>
               ))}
@@ -128,7 +137,7 @@ const Properties: React.FC = () => {
               <h4 className="font-bold text-grey-900 mb-2">Address</h4>
               <p className="text-grey-700 mb-4">
                 89 Xquisit, New BEL Road, Mathikere<br />
-                Bengaluru, Karnataka 560054
+                Bengaluru, Karnataka 560091
               </p>
               
               <div className="space-y-2">

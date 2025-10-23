@@ -64,7 +64,7 @@ const Amenities: React.FC = () => {
       id: 'furniture',
       name: 'Fully Furnished',
       description: 'Beds, study tables, and wardrobes provided',
-      icon: '�️',
+      icon: '🪑',
       category: 'mandatory'
     },
     // Luxury Amenities
@@ -72,7 +72,7 @@ const Amenities: React.FC = () => {
       id: 'kitchen',
       name: 'Self-Cooking Counter',
       description: 'Dedicated space for cooking your own meals',
-      icon: '👨‍�',
+      icon: '🍳',
       category: 'luxury'
     },
     {
