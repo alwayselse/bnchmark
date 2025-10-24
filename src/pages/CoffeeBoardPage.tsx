@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 // Import Coffee Board property images
-import coffee1 from '../assets/coffee/IMG-20251024-WA0011.jpg'
+import coffee1 from '../assets/coffee/IMG-20251024-WA0028.jpg'
 import coffee2 from '../assets/coffee/IMG-20251024-WA0012.jpg'
 import coffee3 from '../assets/coffee/IMG-20251024-WA0013.jpg'
 import coffee4 from '../assets/coffee/IMG-20251024-WA0015.jpg'
@@ -16,15 +16,15 @@ import coffee8 from '../assets/coffee/IMG-20251024-WA0020.jpg'
 import coffee9 from '../assets/coffee/IMG-20251024-WA0021.jpg'
 import coffee10 from '../assets/coffee/IMG-20251024-WA0022.jpg'
 import coffee11 from '../assets/coffee/IMG-20251024-WA0027.jpg'
-import coffee12 from '../assets/coffee/IMG-20251024-WA0028.jpg'
+import coffee12 from '../assets/coffee/IMG-20251024-WA0011.jpg'
 
 const CoffeeBoardPage: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   // Coffee Board property images with SEO-friendly alt tags
   const propertyImages = [
-    { url: coffee2, alt: '220 Coffee Board Apartment - Bedroom - Fully Furnished 1BHK near Coffee Board' },
     { url: coffee1, alt: '220 Coffee Board 1BHK Bengaluru - Living Room - Premium Apartment Rental' },
+    { url: coffee2, alt: '220 Coffee Board Apartment - Bedroom - Fully Furnished 1BHK near Coffee Board' },
     { url: coffee3, alt: '220 Coffee Board - Kitchen - Independent 1BHK Apartment Bengaluru' },
     { url: coffee4, alt: '220 Coffee Board 1BHK - Bathroom - Premium Rental Apartment' },
     { url: coffee5, alt: '220 Coffee Board Bengaluru - Dining Area - Fully Furnished Independent Living' },
