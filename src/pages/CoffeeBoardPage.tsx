@@ -1,10 +1,42 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MapPin, Check, ArrowLeft, Home } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+// Import Coffee Board property images
+import coffee1 from '../assets/coffee/IMG-20251024-WA0011.jpg'
+import coffee2 from '../assets/coffee/IMG-20251024-WA0012.jpg'
+import coffee3 from '../assets/coffee/IMG-20251024-WA0013.jpg'
+import coffee4 from '../assets/coffee/IMG-20251024-WA0015.jpg'
+import coffee5 from '../assets/coffee/IMG-20251024-WA0017.jpg'
+import coffee6 from '../assets/coffee/IMG-20251024-WA0018.jpg'
+import coffee7 from '../assets/coffee/IMG-20251024-WA0019.jpg'
+import coffee8 from '../assets/coffee/IMG-20251024-WA0020.jpg'
+import coffee9 from '../assets/coffee/IMG-20251024-WA0021.jpg'
+import coffee10 from '../assets/coffee/IMG-20251024-WA0022.jpg'
+import coffee11 from '../assets/coffee/IMG-20251024-WA0027.jpg'
+import coffee12 from '../assets/coffee/IMG-20251024-WA0028.jpg'
+
 const CoffeeBoardPage: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Coffee Board property images with SEO-friendly alt tags
+  const propertyImages = [
+    { url: coffee1, alt: '220 Coffee Board 1BHK Bengaluru - Living Room - Premium Apartment Rental' },
+    { url: coffee2, alt: '220 Coffee Board Apartment - Bedroom - Fully Furnished 1BHK near Coffee Board' },
+    { url: coffee3, alt: '220 Coffee Board - Kitchen - Independent 1BHK Apartment Bengaluru' },
+    { url: coffee4, alt: '220 Coffee Board 1BHK - Bathroom - Premium Rental Apartment' },
+    { url: coffee5, alt: '220 Coffee Board Bengaluru - Dining Area - Fully Furnished Independent Living' },
+    { url: coffee6, alt: '220 Coffee Board - Interior View - Best 1BHK Apartment near Coffee Board' },
+    { url: coffee7, alt: '220 Coffee Board Apartment - Balcony - Premium 1BHK Rental Bengaluru' },
+    { url: coffee8, alt: '220 Coffee Board - Room View - Furnished Apartment near Coffee Board Area' },
+    { url: coffee9, alt: '220 Coffee Board 1BHK - Living Space - Independent Apartment Bengaluru' },
+    { url: coffee10, alt: '220 Coffee Board - Modern Amenities - Premium 1BHK near Coffee Board' },
+    { url: coffee11, alt: '220 Coffee Board Apartment - Entrance - Fully Furnished 1BHK Bengaluru' },
+    { url: coffee12, alt: '220 Coffee Board - Property View - Best Independent Living near Coffee Board' }
+  ]
+  
   // Update meta tags for SEO
   useEffect(() => {
     document.title = '220 Coffee Board - Premium 1BHK Apartment in Bengaluru | bnchmark'
@@ -117,6 +149,50 @@ const CoffeeBoardPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Image Gallery */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-grey-900 mb-6">Property Gallery</h3>
+            
+            {/* Main Image */}
+            <div className="relative h-96 rounded-xl overflow-hidden shadow-lg mb-4">
+              <img
+                src={propertyImages[currentImageIndex].url}
+                alt={propertyImages[currentImageIndex].alt}
+                className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width="800"
+                height="600"
+              />
+            </div>
+
+            {/* Thumbnail Grid */}
+            <div className="grid grid-cols-6 gap-3">
+              {propertyImages.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`relative h-20 rounded-lg overflow-hidden transition-all duration-200 ${
+                    currentImageIndex === index
+                      ? 'ring-2 ring-yellow-500 scale-105'
+                      : 'hover:scale-105 opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                    width="200"
+                    height="150"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Location & Pricing Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Location Map */}
@@ -127,18 +203,29 @@ const CoffeeBoardPage: React.FC = () => {
               </h3>
               
               {/* Embedded Google Map */}
-              <div className="w-full h-80 rounded-lg overflow-hidden border border-grey-200 mb-4">
+              <div className="w-full h-64 rounded-lg overflow-hidden border border-grey-200 mb-4">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5!2d77.595!3d12.985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA1JzA2LjAiTiA3N8KwMzUnNDIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://maps.google.com/maps?q=2JX3+W6%20Bengaluru,%20Karnataka,%20India&hl=en&z=15&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="220 Coffee Board Location Map"
+                  title="220 Coffee Board Location - Bengaluru"
                 ></iframe>
               </div>
+
+              {/* Open in Google Maps Button */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=2JX3%2BW6%20Bengaluru%2C%20Karnataka%2C%20India"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mb-4"
+              >
+                <MapPin className="w-5 h-5 mr-2" />
+                Open in Google Maps
+              </a>
 
               {/* Address */}
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">

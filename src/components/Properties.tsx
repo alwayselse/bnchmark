@@ -3,13 +3,27 @@ import { MapPin, Users, Check } from 'lucide-react'
 
 // Import 89 Xquisit property images (different from hero)
 import bathroom from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2851 [BATHROOM].jpg'
+import bathroom2 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2852 [BATHROOM].jpg'
+import bathroom3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2887 [BATHROOM].jpg'
 import passage1 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2856 [PASSAGE].jpg'
 import passage2 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2889 [PASSAGE].jpg'
+import passage3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2858 [PASSAGE].jpg'
+import passage4 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2864 [PASSAGE].jpg'
 import doubleRoom3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2879 [DOUBLE SHARING ROOM].jpg'
+import doubleRoom4 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2877 [DOUBLE SHARING ROOM].jpg'
 import tripleRoom3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2846 [TRIPLE SHARING ROOM].jpg'
+import tripleRoom4 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2838 [TRIPLE SHARING ROOM].jpg'
 import dining3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2973 [DINING].jpg'
+import dining4 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2975 [DINING].jpg'
+import dining5 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2978 [DINING].jpg'
 import lobby3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2932 [LOBBY].jpg'
+import lobby4 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2929 [LOBBY].jpg'
+import lobby5 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2940 [LOBBY].jpg'
 import terrace2 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2914 [TERRACE].jpg'
+import terrace3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2916 [TERRACE].jpg'
+import terrace4 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2923 [TERRACE].jpg'
+import library2 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2867 [PASSAGE,LIBRARY].jpg'
+import library3 from '../assets/89/Sanjay\'s 89 Xquisit BEL Road_2869 [PASSAGE, LIBRARY].jpg'
 
 const Properties: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -22,7 +36,21 @@ const Properties: React.FC = () => {
     { url: terrace2, alt: '89 Xquisit PG Bengaluru - Terrace View - Co-living Space near Mathikere' },
     { url: passage1, alt: '89 Xquisit PG Bengaluru - Passage Corridor - Modern PG Hostel near BEL Road' },
     { url: bathroom, alt: '89 Xquisit PG Bengaluru - Modern Bathroom - Best Hostel Amenities near Mathikere' },
-    { url: passage2, alt: '89 Xquisit PG Bengaluru - Library Passage - Student PG near MSRIT and IISc' }
+    { url: passage2, alt: '89 Xquisit PG Bengaluru - Library Passage - Student PG near MSRIT and IISc' },
+    { url: doubleRoom4, alt: '89 Xquisit PG - Spacious Double Room - Premium Hostel Accommodation Bengaluru' },
+    { url: tripleRoom4, alt: '89 Xquisit PG - Comfortable Triple Sharing - Affordable PG near BEL Road' },
+    { url: dining4, alt: '89 Xquisit PG - Dining Area - Best PG with Food Facilities Mathikere' },
+    { url: lobby4, alt: '89 Xquisit PG - Reception Lobby - Modern Hostel near MS Ramaiah College' },
+    { url: terrace3, alt: '89 Xquisit PG - Rooftop Terrace - Premium Co-living Space Bengaluru' },
+    { url: bathroom2, alt: '89 Xquisit PG - Clean Bathrooms - Best Hostel Hygiene Standards Bengaluru' },
+    { url: passage3, alt: '89 Xquisit PG - Well-lit Corridor - Safe PG for Boys and Girls Bengaluru' },
+    { url: dining5, alt: '89 Xquisit PG - Modern Dining Hall - Nutritious Meals PG near BEL Road' },
+    { url: library2, alt: '89 Xquisit PG - Study Library - Student Hostel near MSRIT Bengaluru' },
+    { url: lobby5, alt: '89 Xquisit PG - Welcoming Entrance - Best PG in Mathikere Bengaluru' },
+    { url: terrace4, alt: '89 Xquisit PG - Terrace Sitting Area - Co-living Amenities Bengaluru' },
+    { url: bathroom3, alt: '89 Xquisit PG - Attached Bathrooms - Premium Hostel Facilities Mathikere' },
+    { url: passage4, alt: '89 Xquisit PG - Spacious Hallways - Modern PG Infrastructure Bengaluru' },
+    { url: library3, alt: '89 Xquisit PG - Reading Area - Best Study Environment near IISc Bengaluru' }
   ]
 
   const keyFeatures = [
@@ -82,9 +110,9 @@ const Properties: React.FC = () => {
               </div>
             </div>
 
-            {/* Thumbnail Grid */}
-            <div className="grid grid-cols-4 gap-3">
-              {propertyImages.slice(0, 8).map((image, index) => (
+            {/* Thumbnail Grid - Show all images */}
+            <div className="grid grid-cols-6 gap-2">
+              {propertyImages.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
@@ -111,25 +139,36 @@ const Properties: React.FC = () => {
           {/* Right: Location Map */}
           <div className="space-y-6">
             {/* Map Container */}
-            <div className="bg-white rounded-xl shadow-lg p-6 h-96">
+            <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-grey-900 mb-4 flex items-center">
                 <MapPin className="w-5 h-5 mr-2 text-yellow-500" />
                 Prime Location
               </h3>
               
               {/* Embedded Google Map */}
-              <div className="w-full h-72 rounded-lg overflow-hidden border border-grey-200">
+              <div className="w-full h-72 rounded-lg overflow-hidden border border-grey-200 mb-4">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9896!2d77.5677!3d13.0358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzA5LjAiTiA3N8KwMzQnMDMuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://maps.google.com/maps?q=2HHF+C3%20Bengaluru,%20Karnataka,%20India&hl=en&z=15&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="89 Xquisit Location Map"
+                  title="89 Xquisit Location - New BEL Road, Mathikere, Bengaluru"
                 ></iframe>
               </div>
+
+              {/* Open in Google Maps Button */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=2HHF%2BC3%20Bengaluru%2C%20Karnataka%2C%20India"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                <MapPin className="w-5 h-5 mr-2" />
+                Open in Google Maps
+              </a>
             </div>
 
             {/* Address Card */}

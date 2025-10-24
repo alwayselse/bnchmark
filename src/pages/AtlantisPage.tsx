@@ -1,10 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MapPin, Users, Check, ArrowLeft, Wifi, Zap, Sparkles, Car } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+// Import Atlantis property images
+import atlantis1 from '../assets/atlantis/1.jpg'
+import atlantis2 from '../assets/atlantis/2.jpg'
+import atlantis3 from '../assets/atlantis/3.jpg'
+import atlantis4 from '../assets/atlantis/4.jpg'
+import atlantis5 from '../assets/atlantis/5.jpg'
+import atlantis6 from '../assets/atlantis/6.jpg'
+
 const AtlantisPage: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Atlantis property images with SEO-friendly alt tags
+  const propertyImages = [
+    { url: atlantis1, alt: 'Atlantis PG Nagavara Bengaluru - Room View - Best Hostel near Manyata Tech Park' },
+    { url: atlantis2, alt: 'Atlantis PG Nagavara - Living Space - Affordable Co-living near Manyata' },
+    { url: atlantis3, alt: 'Atlantis PG Bengaluru - Common Area - Best PG for Professionals near Nagavara' },
+    { url: atlantis4, alt: 'Atlantis Hostel Nagavara - Bedroom - Premium PG accommodation near Manyata Tech Park' },
+    { url: atlantis5, alt: 'Atlantis PG Bengaluru - Facilities - Co-living Space near Nagavara Metro' },
+    { url: atlantis6, alt: 'Atlantis Co-living Nagavara - Interior - Best Hostel for Working Professionals' }
+  ]
+  
   // Update meta tags for SEO
   useEffect(() => {
     document.title = 'Atlantis - Best PG in Nagavara Bengaluru | bnchmark'
@@ -102,6 +122,50 @@ const AtlantisPage: React.FC = () => {
               </p>
             </div>
 
+            {/* Image Gallery */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-grey-900 mb-6">Property Gallery</h3>
+              
+              {/* Main Image */}
+              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg mb-4">
+                <img
+                  src={propertyImages[currentImageIndex].url}
+                  alt={propertyImages[currentImageIndex].alt}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  width="800"
+                  height="600"
+                />
+              </div>
+
+              {/* Thumbnail Grid */}
+              <div className="grid grid-cols-6 gap-3">
+                {propertyImages.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`relative h-20 rounded-lg overflow-hidden transition-all duration-200 ${
+                      currentImageIndex === index
+                        ? 'ring-2 ring-yellow-500 scale-105'
+                        : 'hover:scale-105 opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    <img
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      decoding="async"
+                      width="200"
+                      height="150"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Key Amenities */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
@@ -140,18 +204,29 @@ const AtlantisPage: React.FC = () => {
               </h3>
               
               {/* Embedded Google Map */}
-              <div className="w-full h-80 rounded-lg overflow-hidden border border-grey-200 mb-4">
+              <div className="w-full h-64 rounded-lg overflow-hidden border border-grey-200 mb-4">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.542!2d77.606!3d13.050!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzAwLjAiTiA3N8KwMzYnMjEuNiJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://maps.google.com/maps?q=2JQ9+QQ%20Bengaluru,%20Karnataka,%20India&hl=en&z=15&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Atlantis Co-Living Location Map"
+                  title="Atlantis Co-Living Location - Nagavara, Bengaluru"
                 ></iframe>
               </div>
+
+              {/* Open in Google Maps Button */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=2JQ9%2BQQ%20Bengaluru%2C%20Karnataka%2C%20India"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mb-4"
+              >
+                <MapPin className="w-5 h-5 mr-2" />
+                Open in Google Maps
+              </a>
 
               {/* Address */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
