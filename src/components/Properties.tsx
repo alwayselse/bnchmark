@@ -175,12 +175,12 @@ const Properties: React.FC = () => {
             <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
               <h4 className="font-bold text-grey-900 mb-2">Address</h4>
               <p className="text-grey-700 mb-4">
-                89 Xquisit, New BEL Road, Mathikere<br />
-                Bengaluru, Karnataka 560091
+                 89,KGECS Layout, New BEL Rd, Devasandra, Bengaluru, Karnataka 560094
+
               </p>
               
               <div className="space-y-2">
-                <h4 className="font-bold text-grey-900 mb-2">Nearby Landmarks</h4>
+                <h4 className="font-bold text-grey-900 mb-2">Nearby Institutions / Colleges / Offices</h4>
                 <div className="grid grid-cols-2 gap-2 text-sm text-grey-700">
                   <div>• M S Ramaiah College</div>
                   <div>• MSRIT</div>
@@ -190,6 +190,8 @@ const Properties: React.FC = () => {
                   <div>• Deloitte</div>
                   <div>• BEL</div>
                   <div>• ISRO</div>
+                  <div>• World Trade Center</div>
+                  <div>• Hebbal</div>
                 </div>
               </div>
             </div>

@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
 
   const handleFindYourSpace = () => {
     const whatsappNumber = "917411057111"
-    const message = "Hi, I'm interested in finding my space at bnchmark!"
+    const message = "Hi, I'm interested in finding my space at bnchmarc!"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
     

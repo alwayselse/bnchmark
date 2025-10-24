@@ -11,6 +11,9 @@ import atlantis3 from '../assets/atlantis/3.jpg'
 import atlantis4 from '../assets/atlantis/4.jpg'
 import atlantis5 from '../assets/atlantis/5.jpg'
 import atlantis6 from '../assets/atlantis/6.jpg'
+import atlantis7 from '../assets/atlantis/7.jpg'
+import atlantis8 from '../assets/atlantis/8.jpg'
+import atlantis9 from '../assets/atlantis/9.jpg'
 
 const AtlantisPage: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -22,17 +25,20 @@ const AtlantisPage: React.FC = () => {
     { url: atlantis3, alt: 'Atlantis PG Bengaluru - Common Area - Best PG for Professionals near Nagavara' },
     { url: atlantis4, alt: 'Atlantis Hostel Nagavara - Bedroom - Premium PG accommodation near Manyata Tech Park' },
     { url: atlantis5, alt: 'Atlantis PG Bengaluru - Facilities - Co-living Space near Nagavara Metro' },
-    { url: atlantis6, alt: 'Atlantis Co-living Nagavara - Interior - Best Hostel for Working Professionals' }
+    { url: atlantis6, alt: 'Atlantis Co-living Nagavara - Interior - Best Hostel for Working Professionals' },
+    { url: atlantis7, alt: 'Atlantis PG Nagavara - Room Interior - Premium Co-living near Manyata Tech Park' },
+    { url: atlantis8, alt: 'Atlantis PG Bengaluru - Common Space - Best Hostel near Nagavara' },
+    { url: atlantis9, alt: 'Atlantis Co-living Nagavara - Amenities - Premium PG for Professionals' }
   ]
   
   // Update meta tags for SEO
   useEffect(() => {
-    document.title = 'Atlantis - Best PG in Nagavara Bengaluru | bnchmark'
+    document.title = 'Atlantis - Best PG in Nagavara Bengaluru | bnchmarc'
     
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
       metaDescription.setAttribute('content', 
-        'Book Atlantis PG in Nagavara Bengaluru near Manyata Tech Park. Affordable co-living space with Wi-Fi, power backup, and parking. Starting from ₹7,000/month. Best hostel for professionals.'
+        'Book Atlantis PG in Nagavara Bengaluru near Manyata Tech Park. Affordable co-living space with Wi-Fi, power backup, and parking. Starting from ₹15,000/month. Best hostel for professionals.'
       )
     }
 
@@ -44,12 +50,12 @@ const AtlantisPage: React.FC = () => {
     const ogDescription = document.querySelector('meta[property="og:description"]')
     if (ogDescription) {
       ogDescription.setAttribute('content', 
-        'Affordable PG accommodation in Nagavara near Manyata Tech Park. Co-living spaces from ₹7,000/month with Wi-Fi, power backup, and parking.'
+        'Affordable PG accommodation in Nagavara near Manyata Tech Park. Co-living spaces from ₹15,000/month with Wi-Fi, power backup, and parking.'
       )
     }
 
     return () => {
-      document.title = 'bnchmark - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
+      document.title = 'bnchmarc - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹15000/month'
       const metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
         metaDescription.setAttribute('content', 
@@ -112,8 +118,7 @@ const AtlantisPage: React.FC = () => {
               <h3 className="text-xl font-bold text-grey-900 mb-3">The Bnchmarc Advantage</h3>
               <p className="text-grey-800 leading-relaxed mb-4">
                 At Bnchmarc, you can expect the best of clean and comfortable accommodation in the heart of Bengaluru City. 
-                The <span className="font-semibold">Manyata Tech Park</span> is at a quick <span className="font-semibold">5 minute walk</span> or{' '}
-                <span className="font-semibold">2 minute drive</span> from Atlantis. This makes it an ideal base for students or 
+                The <span className="font-semibold">Manyata Tech Park</span> is at a quick <span className="font-semibold">5 minute walk</span> from Atlantis. This makes it an ideal base for students or 
                 working professionals, and refresh in the evening in the plethora of surrounding shopping and entertainment options.
               </p>
               
@@ -127,11 +132,11 @@ const AtlantisPage: React.FC = () => {
               <h3 className="text-2xl font-bold text-grey-900 mb-6">Property Gallery</h3>
               
               {/* Main Image */}
-              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg mb-4">
+              <div className="relative h-[500px] sm:h-[600px] rounded-xl overflow-hidden shadow-lg mb-4 bg-grey-100">
                 <img
                   src={propertyImages[currentImageIndex].url}
                   alt={propertyImages[currentImageIndex].alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
@@ -251,26 +256,14 @@ const AtlantisPage: React.FC = () => {
                   <h4 className="font-bold text-pink-700">WOMEN</h4>
                 </div>
                 
-                <div className="space-y-3">
-                  <div className="border-2 border-pink-200 rounded-lg p-4 bg-pink-50/30">
-                    <div className="flex items-center mb-2">
-                      <Users className="w-4 h-4 text-pink-500 mr-2" />
-                      <h5 className="font-bold text-grey-900">Double Sharing</h5>
-                    </div>
-                    <p className="text-sm text-grey-600 mb-1">Shared Room Double Occupancy</p>
-                    <p className="text-2xl font-bold text-pink-600">₹7,000</p>
-                    <p className="text-xs text-grey-600">starts @ per month</p>
+                <div className="border-2 border-pink-200 rounded-lg p-4 bg-pink-50/30">
+                  <div className="flex items-center mb-2">
+                    <Users className="w-4 h-4 text-pink-500 mr-2" />
+                    <h5 className="font-bold text-grey-900">Single Occupancy</h5>
                   </div>
-
-                  <div className="border-2 border-pink-200 rounded-lg p-4 bg-pink-50/30">
-                    <div className="flex items-center mb-2">
-                      <Users className="w-4 h-4 text-pink-500 mr-2" />
-                      <h5 className="font-bold text-grey-900">Single Occupancy</h5>
-                    </div>
-                    <p className="text-sm text-grey-600 mb-1">Full Room Single Occupancy</p>
-                    <p className="text-2xl font-bold text-pink-600">₹12,000</p>
-                    <p className="text-xs text-grey-600">starts @ per month</p>
-                  </div>
+                  <p className="text-sm text-grey-600 mb-1">Full Room Single Occupancy</p>
+                  <p className="text-2xl font-bold text-pink-600">₹15,000</p>
+                  <p className="text-xs text-grey-600">starts @ per month</p>
                 </div>
               </div>
 
@@ -280,26 +273,14 @@ const AtlantisPage: React.FC = () => {
                   <h4 className="font-bold text-blue-700">MEN</h4>
                 </div>
                 
-                <div className="space-y-3">
-                  <div className="border-2 border-blue-200 rounded-lg p-4 bg-blue-50/30">
-                    <div className="flex items-center mb-2">
-                      <Users className="w-4 h-4 text-blue-500 mr-2" />
-                      <h5 className="font-bold text-grey-900">Double Sharing</h5>
-                    </div>
-                    <p className="text-sm text-grey-600 mb-1">Shared Room Double Occupancy</p>
-                    <p className="text-2xl font-bold text-blue-600">₹7,000</p>
-                    <p className="text-xs text-grey-600">starts @ per month</p>
+                <div className="border-2 border-blue-200 rounded-lg p-4 bg-blue-50/30">
+                  <div className="flex items-center mb-2">
+                    <Users className="w-4 h-4 text-blue-500 mr-2" />
+                    <h5 className="font-bold text-grey-900">Single Occupancy</h5>
                   </div>
-
-                  <div className="border-2 border-blue-200 rounded-lg p-4 bg-blue-50/30">
-                    <div className="flex items-center mb-2">
-                      <Users className="w-4 h-4 text-blue-500 mr-2" />
-                      <h5 className="font-bold text-grey-900">Single Occupancy</h5>
-                    </div>
-                    <p className="text-sm text-grey-600 mb-1">Full Room Single Occupancy</p>
-                    <p className="text-2xl font-bold text-blue-600">₹12,000</p>
-                    <p className="text-xs text-grey-600">starts @ per month</p>
-                  </div>
+                  <p className="text-sm text-grey-600 mb-1">Full Room Single Occupancy</p>
+                  <p className="text-2xl font-bold text-blue-600">₹15,000</p>
+                  <p className="text-xs text-grey-600">starts @ per month</p>
                 </div>
               </div>
 

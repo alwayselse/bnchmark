@@ -1,10 +1,10 @@
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": "bnchmark",
-  "alternateName": "bnchmark PG and Hostels",
-  "url": "https://www.bnchmark.com",
-  "logo": "https://www.bnchmark.com/logo.png",
+  "name": "bnchmarc",
+  "alternateName": "bnchmarc PG and Hostels",
+  "url": "https://www.bnchmarc.com",
+  "logo": "https://www.bnchmarc.com/logo.png",
   "description": "Premium PG, hostel, and co-living spaces in Bengaluru offering fully furnished accommodation with modern amenities for students and working professionals.",
   "address": {
     "@type": "PostalAddress",
@@ -38,7 +38,7 @@ export const propertySchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Accommodation",
-    "name": "89 Xquisit PG - bnchmark",
+    "name": "89 Xquisit PG - bnchmarc",
     "description": "Premium PG accommodation near MS Ramaiah, MSRIT, and BEL offering fully furnished rooms with AC, Wi-Fi, food, and 24/7 security.",
     "address": {
       "@type": "PostalAddress",
@@ -72,7 +72,7 @@ export const propertySchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Accommodation",
-    "name": "Atlantis Co-Living Space - bnchmark",
+    "name": "Atlantis Co-Living Space - bnchmarc",
     "description": "Modern co-living PG near Manyata Tech Park with high-speed Wi-Fi, power backup, and parking facilities.",
     "address": {
       "@type": "PostalAddress",
@@ -94,7 +94,7 @@ export const propertySchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Accommodation",
-    "name": "220 Coffee Board - bnchmark",
+    "name": "220 Coffee Board - bnchmarc",
     "description": "Independent Single BHK apartment for rent in prime location with modern amenities.",
     "address": {
       "@type": "PostalAddress",
@@ -121,13 +121,13 @@ export const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://www.bnchmark.com"
+      "item": "https://www.bnchmarc.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "PG in Bengaluru",
-      "item": "https://www.bnchmark.com/#properties"
+      "item": "https://www.bnchmarc.com/#properties"
     }
   ]
 };
@@ -138,7 +138,7 @@ export const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the price range for PG in Bengaluru at bnchmark?",
+      "name": "What is the price range for PG in Bengaluru at bnchmarc?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Our PG accommodation in Bengaluru ranges from ₹7,000 to ₹24,000 per month depending on the room type (single, double, or triple sharing) and location."
@@ -146,7 +146,7 @@ export const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What amenities are included in bnchmark PG?",
+      "name": "What amenities are included in bnchmarc PG?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "All our PG accommodations include AC, high-speed Wi-Fi, optional food, 24/7 water and electricity, washing machines, housekeeping, CCTV security, and fully furnished rooms."
@@ -176,7 +176,7 @@ export const reviewSchema = {
   "@type": "Review",
   "itemReviewed": {
     "@type": "LodgingBusiness",
-    "name": "89 Xquisit PG - bnchmark"
+    "name": "89 Xquisit PG - bnchmarc"
   },
   "reviewRating": {
     "@type": "Rating",

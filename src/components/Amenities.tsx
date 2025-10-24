@@ -63,7 +63,7 @@ const Amenities: React.FC = () => {
     {
       id: 'furniture',
       name: 'Fully Furnished',
-      description: 'Beds, study tables, and wardrobes provided',
+      description: 'Beds, Mattresses, Linen, Curtains, Chair, Study Tables, and Wardrobes provided',
       icon: '🪑',
       category: 'mandatory'
     },
@@ -113,8 +113,8 @@ const Amenities: React.FC = () => {
               <span className="font-semibold">CPRI</span>.
             </p>
             <p className="text-lg text-grey-800 leading-relaxed mt-4">
-              Ideal for <span className="font-semibold">students, doctors,</span> and <span className="font-semibold">professionals</span>, 
-              our fully furnished PG rooms include <span className="font-semibold">beds, AC, Wi-Fi, study tables, washing machines</span>, and{' '}
+              Ideal for <span className="font-semibold">Students, Doctors,</span> and <span className="font-semibold">professionals</span>, 
+              our fully furnished PG rooms include <span className="font-semibold">beds, AC, Wi-Fi, Study tables, Washing machines</span>, and{' '}
               <span className="font-semibold">housekeeping</span>.
             </p>
             <p className="text-lg text-grey-800 leading-relaxed mt-4">

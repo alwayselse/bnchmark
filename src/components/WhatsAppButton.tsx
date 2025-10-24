@@ -4,7 +4,7 @@ const WhatsAppButton: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false)
   
   const whatsappNumber = "917411057111"
-  const defaultMessage = "Hi, I'm interested in bnchmark properties."
+  const defaultMessage = "Hi, I'm interested in bnchmarc properties."
   
   const handleWhatsAppClick = () => {
     // Format the WhatsApp URL with pre-populated message

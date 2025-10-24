@@ -23,8 +23,8 @@ const CoffeeBoardPage: React.FC = () => {
 
   // Coffee Board property images with SEO-friendly alt tags
   const propertyImages = [
-    { url: coffee1, alt: '220 Coffee Board 1BHK Bengaluru - Living Room - Premium Apartment Rental' },
     { url: coffee2, alt: '220 Coffee Board Apartment - Bedroom - Fully Furnished 1BHK near Coffee Board' },
+    { url: coffee1, alt: '220 Coffee Board 1BHK Bengaluru - Living Room - Premium Apartment Rental' },
     { url: coffee3, alt: '220 Coffee Board - Kitchen - Independent 1BHK Apartment Bengaluru' },
     { url: coffee4, alt: '220 Coffee Board 1BHK - Bathroom - Premium Rental Apartment' },
     { url: coffee5, alt: '220 Coffee Board Bengaluru - Dining Area - Fully Furnished Independent Living' },
@@ -39,29 +39,29 @@ const CoffeeBoardPage: React.FC = () => {
   
   // Update meta tags for SEO
   useEffect(() => {
-    document.title = '220 Coffee Board - Premium 1BHK Apartment in Bengaluru | bnchmark'
+    document.title = '220 Coffee Board Co-Living - Premium 1BHK Apartment in Bengaluru | bnchmarc'
     
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
       metaDescription.setAttribute('content', 
-        'Book 220 Coffee Board - Premium Single BHK apartment in Bengaluru. Fully furnished independent living space at ₹17,000/month. Best 1BHK rental near Coffee Board area.'
+        'Book 220 Coffee Board Co-Living - Premium Single BHK apartment in Hebbal, Bengaluru. Fully furnished independent living space at ₹20,000/month. Best 1BHK rental near Coffee Board area.'
       )
     }
 
     const ogTitle = document.querySelector('meta[property="og:title"]')
     if (ogTitle) {
-      ogTitle.setAttribute('content', '220 Coffee Board - Premium 1BHK Apartment in Bengaluru')
+      ogTitle.setAttribute('content', '220 Coffee Board Co-Living - Premium 1BHK Apartment in Bengaluru')
     }
 
     const ogDescription = document.querySelector('meta[property="og:description"]')
     if (ogDescription) {
       ogDescription.setAttribute('content', 
-        'Premium Single BHK apartment in Bengaluru. Fully furnished independent living at ₹17,000/month. Best 1BHK rental property.'
+        'Premium Single BHK apartment in Hebbal, Bengaluru. Fully furnished independent living at ₹20,000/month. Best 1BHK rental property.'
       )
     }
 
     return () => {
-      document.title = 'bnchmark - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
+      document.title = 'bnchmarc - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
       const metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
         metaDescription.setAttribute('content', 
@@ -84,7 +84,7 @@ const CoffeeBoardPage: React.FC = () => {
 
   const handleWhatsApp = () => {
     const whatsappNumber = "917411057111"
-    const message = "Hi, I'm interested in 220 Coffee Board - Single BHK. Can you provide more details?"
+    const message = "Hi, I'm interested in 220 Coffee Board Co-Living - Single BHK. Can you provide more details?"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
@@ -109,7 +109,7 @@ const CoffeeBoardPage: React.FC = () => {
             <div className="flex items-center mb-4">
               <Home className="w-8 h-8 text-yellow-500 mr-3" />
               <h1 className="text-4xl font-bold text-grey-900">
-                220 Coffee Board
+                220 Coffee Board Co-Living
               </h1>
             </div>
             <p className="text-xl text-grey-600 mb-6">
@@ -154,11 +154,11 @@ const CoffeeBoardPage: React.FC = () => {
             <h3 className="text-2xl font-bold text-grey-900 mb-6">Property Gallery</h3>
             
             {/* Main Image */}
-            <div className="relative h-96 rounded-xl overflow-hidden shadow-lg mb-4">
+            <div className="relative h-[500px] sm:h-[600px] rounded-xl overflow-hidden shadow-lg mb-4 bg-grey-100">
               <img
                 src={propertyImages[currentImageIndex].url}
                 alt={propertyImages[currentImageIndex].alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
@@ -168,12 +168,12 @@ const CoffeeBoardPage: React.FC = () => {
             </div>
 
             {/* Thumbnail Grid */}
-            <div className="grid grid-cols-6 gap-3">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 sm:gap-3">
               {propertyImages.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`relative h-20 rounded-lg overflow-hidden transition-all duration-200 ${
+                  className={`relative h-16 sm:h-20 rounded-lg overflow-hidden transition-all duration-200 ${
                     currentImageIndex === index
                       ? 'ring-2 ring-yellow-500 scale-105'
                       : 'hover:scale-105 opacity-70 hover:opacity-100'
@@ -231,8 +231,9 @@ const CoffeeBoardPage: React.FC = () => {
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                 <h4 className="font-bold text-grey-900 mb-2">Address</h4>
                 <p className="text-grey-700">
-                  220 Coffee Board Layout<br />
-                  Bengaluru, Karnataka
+                  220, Coffee Board Layout<br />
+                  Kempapura, Hebbal<br />
+                  Bengaluru, Karnataka 560024
                 </p>
               </div>
             </div>
@@ -255,7 +256,7 @@ const CoffeeBoardPage: React.FC = () => {
                     <h5 className="font-bold text-grey-900 text-lg">Single BHK</h5>
                   </div>
                   <p className="text-sm text-grey-600 mb-3">Complete independent 1BHK apartment</p>
-                  <p className="text-3xl font-bold text-pink-600 mb-2">₹17,000</p>
+                  <p className="text-3xl font-bold text-pink-600 mb-2">₹20,000</p>
                   <p className="text-sm text-grey-600">starts @ per month</p>
                   <div className="mt-4">
                     <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">
@@ -277,7 +278,7 @@ const CoffeeBoardPage: React.FC = () => {
                     <h5 className="font-bold text-grey-900 text-lg">Single BHK</h5>
                   </div>
                   <p className="text-sm text-grey-600 mb-3">Complete independent 1BHK apartment</p>
-                  <p className="text-3xl font-bold text-blue-600 mb-2">₹17,000</p>
+                  <p className="text-3xl font-bold text-blue-600 mb-2">₹20,000</p>
                   <p className="text-sm text-grey-600">starts @ per month</p>
                   <div className="mt-4">
                     <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">

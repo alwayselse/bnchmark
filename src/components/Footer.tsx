@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-grey-400 text-sm">
-                © {currentYear} bnchmark. All rights reserved.
+                © {currentYear} bnchmarc. All rights reserved.
               </p>
             </div>
 

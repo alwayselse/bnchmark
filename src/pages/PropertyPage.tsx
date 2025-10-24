@@ -30,7 +30,7 @@ const PropertyPage: React.FC = () => {
   // Update meta tags for SEO
   useEffect(() => {
     if (property) {
-      document.title = `${property.name} - Best PG in ${property.location.address} Bengaluru | bnchmark`
+      document.title = `${property.name} - Best PG in ${property.location.address} Bengaluru | bnchmarc`
       
       // Update meta description
       const metaDescription = document.querySelector('meta[name="description"]')
@@ -56,7 +56,7 @@ const PropertyPage: React.FC = () => {
 
     // Cleanup - restore original meta tags on unmount
     return () => {
-      document.title = 'bnchmark - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
+      document.title = 'bnchmarc - Best PG, Hostel & Co-living Spaces in Bengaluru | Starting ₹7000'
       const metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
         metaDescription.setAttribute('content', 

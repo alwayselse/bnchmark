@@ -1,4 +1,4 @@
-﻿import React from 'react'
+﻿import React, { useEffect, useRef } from 'react'
 import { Star, Quote } from 'lucide-react'
 
 interface Review {
@@ -9,18 +9,32 @@ interface Review {
 }
 
 const Testimonials: React.FC = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
   const reviews: Review[] = [
+    {
+      name: "Krishnendu Dey",
+      rating: 5,
+      text: "I've had such a pleasant experience at 89xquisit PG. It truly feels like a second home. The rooms are cozy, clean, and well-kept. The food tastes just like homemade meals, and the staff are always kind and ready to help. The environment is peaceful and safe, which makes it perfect for both students and working professionals.",
+      date: "2 months ago"
+    },
     {
       name: "Prasanna Siva",
       rating: 5,
       text: "My stay at 89xquisit PG has been excellent. The rooms are spacious, neat, and regularly cleaned. The management is professional and always attentive to residents comfort. The food served is delicious and feels homemade. With good security, Wi-Fi, and all basic amenities, this PG truly offers great value for money. I would gladly recommend it to anyone looking for a comfortable and reliable place to stay.",
-      date: "5 days ago"
+      date: "20 days ago"
     },
     {
       name: "Bhaskar hansda",
       rating: 5,
       text: "The PG offers excellent accommodation with all necessary amenities. The hygiene, maintenance, and services are well-managed. The staff is cooperative and ensures a pleasant stay for all residents. Great value for money.",
-      date: "5 days ago"
+      date: "5 months ago"
+    },
+    {
+      name: "Vignesh Gamer",
+      rating: 5,
+      text: "Fantastic place to stay! 89xquisit PG has clean rooms, great food, and very supportive management. The environment is safe, peaceful, and ideal for both students and professionals. Highly recommended",
+      date: "3 months ago"
     },
     {
       name: "Satvik S",
@@ -32,21 +46,90 @@ const Testimonials: React.FC = () => {
       name: "Rajeshwari",
       rating: 5,
       text: "Absolutely love my time at 89 xquisit The amenities are fantastic, from the reliable high-speed Wi-Fi to the clean and modern kitchen. Everything is well-maintained, and the hassle-free all-inclusive rent is a game-changer. It is a great value for the quality of living.",
-      date: "2 weeks ago"
-    },
-    {
-      name: "Vignesh Gamer",
-      rating: 5,
-      text: "Fantastic place to stay! 89xquisit PG has clean rooms, great food, and very supportive management. The environment is safe, peaceful, and ideal for both students and professionals. Highly recommended",
-      date: "5 days ago"
+      date: "3 weeks ago"
     },
     {
       name: "Abid Iqbal Keen",
       rating: 5,
       text: "My Son lives in this hostel from last one year it is one of the Best PG hostels in Banglore. It has clean rooms with Tv, Ac, Wardrobe Study table clean bed and calm atmosphere and all other facilities like RO water purifier in every floor, Common Fridge in every floor, House keeping staff is good and maintains the room changes between sheets and sanitized washrooms every weekend. Food is Awesome And on security is also satisfactory. Terrace is also well maintained where students can relax and chill. I Would recommend to parents to send there children to the hostal.",
       date: "3 months ago"
+    },
+    {
+      name: "Tanya K",
+      rating: 5,
+      text: "I had a pleasant stay and the hospitality was top notch. I can feel the Antique design of the premises at every single step. All the basic necessities are available. The staff is helpful. Has spacious and clean Room. The food provided is hygienic and nutritious. Terrace view will definitely be the best in my stay.",
+      date: "2 years ago"
+    },
+    {
+      name: "Daivik Banerjee",
+      rating: 5,
+      text: "Had a Very Nice Stay Here, The place is clean and food served is also good. Water supply and electricity is also proper. Would recommend anyone who wants to stay for a short or a long period in Bangalore to definitely consider this place, from students to working professionals.",
+      date: "2 years ago"
+    },
+    {
+      name: "RISHIKA MAHAJAN",
+      rating: 5,
+      text: "Feels like home! The best stay in that area for all the students and working people. All the basic necessities are easy available. The staff is really helpful. The rooms are spacious, clean and beautiful. The furniture provided is amazing! The food provided is made in house which is fresh, hygienic, tasty and nutritious. Cleaning is done on alternate days. Washing machines are available in the common area. Parking space is available. Refrigerators are available on each floor. Common kitchen is there in the dining area to cook food. Microwave facility is also there. Terrace is as beautiful as it is shown in the pictures. In short, everything a person requires to live properly is available and the place radiates positive energy.",
+      date: "3 years ago"
+    },
+    {
+      name: "Sud",
+      rating: 5,
+      text: "I'll never ever find a better place than this one. Trust me, I've been to many PG's (ZOLO, GREXTER, HELLOWORLD, etc.) and flats in Bangalore (including HSR Layout where it's too much costly), but the services they give, the security, the vibes and environment, the places around, all top restaurants (from cheap-affordable to fancy-costly), gym, etc. everything is available. They don't charge for move-in or move-out (but if you damage the property then it's chargeable). They don't have any hidden charges. I moved-in and moved-out smoothly. I really miss this place. Everything is well organized which I love the most. The owner and the staff are so polite and they always try their best to help you.",
+      date: "3 years ago"
+    },
+    {
+      name: "Sharanya Mukherjee",
+      rating: 5,
+      text: "I have been staying here for one year and it is the best pg I could have wanted. The property is really good and clean. And the food here is recommendable. Really a good place to stay and enjoy.",
+      date: "3 years ago"
+    },
+    {
+      name: "Prerna Baksh",
+      rating: 5,
+      text: "After scanning most of the nearby PGs, finally landed at 89 Xquisit whereby the topography of it had given me a solace that something of my choice was finally met. Yes indeed when walked in myself and my parents were really satisfied looking at the facilities provided here as it gave me a real feeling of my home though faraway. This cosy haven has indeed made my stay a happy and relaxing one. Thus, looking forward to a blessed and beautiful experience here.",
+      date: "4 years ago"
     }
   ]
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current
+    if (!scrollContainer) return
+
+    let scrollInterval: ReturnType<typeof setInterval> | null = null
+
+    const startScrolling = () => {
+      scrollInterval = setInterval(() => {
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0
+        } else {
+          scrollContainer.scrollLeft += 1
+        }
+      }, 30) // Adjust speed here (lower = faster)
+    }
+
+    const stopScrolling = () => {
+      if (scrollInterval !== null) {
+        clearInterval(scrollInterval)
+        scrollInterval = null
+      }
+    }
+
+    startScrolling()
+
+    // Pause on hover
+    scrollContainer.addEventListener('mouseenter', stopScrolling)
+    scrollContainer.addEventListener('mouseleave', startScrolling)
+
+    return () => {
+      if (scrollInterval !== null) {
+        clearInterval(scrollInterval)
+      }
+      scrollContainer.removeEventListener('mouseenter', stopScrolling)
+      scrollContainer.removeEventListener('mouseleave', startScrolling)
+    }
+  }, [])
 
   const renderStars = (rating: number) => {
     return (
@@ -65,8 +148,11 @@ const Testimonials: React.FC = () => {
     )
   }
 
+  // Duplicate reviews for seamless loop
+  const duplicatedReviews = [...reviews, ...reviews]
+
   return (
-    <section id="testimonials" className="py-20 bg-grey-50">
+    <section id="testimonials" className="py-20 bg-grey-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-grey-900 mb-4">
@@ -77,18 +163,23 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {reviews.map((review, index) => (
+        {/* Auto-scrolling container */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-6 overflow-x-hidden mb-12"
+          style={{ scrollBehavior: 'auto' }}
+        >
+          {duplicatedReviews.map((review, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-grey-200 relative"
+              className="flex-shrink-0 w-80 sm:w-96 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-grey-200 relative"
             >
               <div className="absolute top-4 right-4 opacity-10">
                 <Quote className="w-12 h-12 text-yellow-500" />
               </div>
 
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                   {review.name.charAt(0)}
                 </div>
                 <div>
@@ -99,7 +190,7 @@ const Testimonials: React.FC = () => {
 
               {renderStars(review.rating)}
 
-              <p className="text-grey-700 leading-relaxed">{review.text}</p>
+              <p className="text-grey-700 leading-relaxed line-clamp-6">{review.text}</p>
 
               <div className="mt-4 pt-4 border-t border-grey-100">
                 <div className="flex items-center gap-2">
